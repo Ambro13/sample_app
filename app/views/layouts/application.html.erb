@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SampleApp</title>
+    <!-- запись %= ... % необходима для вставки заголовка в шаблон с помощью Ruby-функции yield:15-->
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

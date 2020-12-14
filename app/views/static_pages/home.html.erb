@@ -1,2 +1,9 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<!-- Встроенный ruby-код. Функция provide необходима для установки отличающегося заголовка на каждой странице-->
+<!-- Код % ... % указывает на то, что Rails должен вызвать функцию provide, и связать строку "Home" с меткой :title. -->
+<% provide(:title, "Home") %>
+<h1>Sample App</h1>
+<p>
+  This is the home page for the
+  <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+  sample application.
+</p>
