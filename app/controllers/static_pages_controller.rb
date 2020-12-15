@@ -12,4 +12,9 @@ class StaticPagesController < ApplicationController
   #метод "о чем"
   def about
   end
+  
+  #метод "контакты"
+  def contact
+  end
+  
 end
