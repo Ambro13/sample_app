@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/about',   to: 'static_pages#about' # Правило направляет запрос для URL /static_pages/about к действию home в контроллере StaticPages.
   get '/contact', to: 'static_pages#contact'
   get 'users/new'
-  get 'signup'  => 'users#new'
+  get '/signup',  to: 'users#new'
+  resources :users  #обеспечивает учебное приложение всеми действиями, необходимыми для RESTful (полностью REST) ресурса Users
   
 end
