@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in user
       remember user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user #Rails автоматически конвертирует его в маршрут к странице профиля пользователя:
+      redirect_back_or user #Rails автоматически конвертирует его в маршрут к странице профиля пользователя:
     else
       # Выдать сообщение об ошибке.
       flash.now[:danger] = 'Invalid email/password combination'

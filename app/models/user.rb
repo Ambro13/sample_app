@@ -9,17 +9,17 @@ class User < ApplicationRecord
   #validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } - вариант из интернета, не совсем точныый, к сожалению
   
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   
    # Возвращает дайджест данной строки
-  def User.digest(string)
+  def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
   
    # Возвращает случайный токен
-  def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
   
