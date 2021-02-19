@@ -40,9 +40,9 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'example.com' }
   
-  host = 'localhost:f3502e3f74cd4994bfcd8ec1316ab586.vfs.cloud9.eu-west-2.amazonaws'  ###################################
+  host = 'ec2-35-178-127-114.eu-west-2.compute.amazonaws.com '  ###################################
   
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   config.action_mailer.perform_caching = false
 

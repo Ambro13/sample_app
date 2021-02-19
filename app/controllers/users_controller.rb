@@ -20,11 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
-      
-      #log_in @user
-      #flash[:success] = "Welcome to the Sample App!"  #Временное сообщение при успешной регистрации
-     # redirect_to @user             #перенаправление на страницу профиля вновь созданного пользователя 
+      redirect_to root_url          #перенаправление на страницу профиля вновь созданного пользователя 
     else                            #(можно написать - redirect_to user_url(@user). Тогда автоматически перенаправится на страницу пользователя)
       render 'new'
     end

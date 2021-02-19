@@ -1,10 +1,5 @@
-<h1>Sample App</h1>
-
-<p>Привет, <%= @user.name %>!</p>
+<h1>UserMailer#account_activation</h1>
 
 <p>
-Добро пожаловать в Учебное Приложение! Перейдите по ссылке для активации аккаунта:
+  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
 </p>
-
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
-                                                    email: @user.email) %>
