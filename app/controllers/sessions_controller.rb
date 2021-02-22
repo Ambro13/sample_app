@@ -6,6 +6,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
+      # log_in user
+      # remember user
+      # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      # redirect_to user #Rails автоматически конвертирует его в маршрут к странице профиля пользователя:
+      # redirect_back_or user #Rails автоматически конвертирует его в маршрут к странице профиля пользователя:
+      
       if user.activated?
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
